@@ -6,7 +6,7 @@
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 19:46:23 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/19 13:46:40 by mstupnik         ###   ########.fr       */
+/*   Updated: 2019/09/19 14:35:44 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 	char	*hstck;
 	char	*ndl;
 

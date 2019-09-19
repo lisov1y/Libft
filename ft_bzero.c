@@ -6,7 +6,7 @@
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 18:43:41 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/19 13:34:34 by mstupnik         ###   ########.fr       */
+/*   Updated: 2019/09/19 14:34:32 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int				x;
+	size_t			x;
 	unsigned char	*str;
 
 	x = 0;
