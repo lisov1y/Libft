@@ -6,7 +6,7 @@
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 10:45:16 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/19 13:36:41 by mstupnik         ###   ########.fr       */
+/*   Updated: 2019/09/23 13:28:02 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int		ft_isdigit(int c)
 {
-	unsigned char	cc;
-
-	cc = (unsigned char)c;
-	if (cc >= 48 && cc <= 57)
+	if (c >= 48 && c <= 57)
 		return (1);
 	else
 		return (0);

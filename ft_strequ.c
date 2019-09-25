@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 19:04:17 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/22 19:34:56 by mstupnik         ###   ########.fr       */
+/*   Created: 2019/09/20 14:00:36 by mstupnik          #+#    #+#             */
+/*   Updated: 2019/09/23 14:04:06 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	char	*str;
-	char	cc;
-	int		i;
-
-	str = (char *)s;
-	cc = (char)c;
-	i = 0;
-	while (str[i] != '\0' && str[i] != cc)
-		i++;
-	if (str[i] == cc)
-		return (str + i);
-	return (NULL);
+	if (s1 && s2)
+		if (!ft_strcmp(s1, s2))
+			return (1);
+	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 11:49:59 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/19 13:36:15 by mstupnik         ###   ########.fr       */
+/*   Updated: 2019/09/23 13:28:55 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		isascii(int c)
+int		ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

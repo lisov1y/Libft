@@ -6,13 +6,13 @@
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 12:03:44 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/19 13:37:06 by mstupnik         ###   ########.fr       */
+/*   Updated: 2019/09/22 14:52:54 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		isprint(int c)
+int		ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }

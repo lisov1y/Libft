@@ -6,7 +6,7 @@
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 10:51:13 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/19 13:35:07 by mstupnik         ###   ########.fr       */
+/*   Updated: 2019/09/23 13:28:35 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 int		ft_isalnum(int c)
 {
-	unsigned char cc;
-
-	cc = (unsigned char)c;
-	if (cc >= 48 && cc <= 57)
+	if (c >= 48 && c <= 57)
 		return (1);
-	else if (cc >= 65 && cc <= 90)
+	else if (c >= 65 && c <= 90)
 		return (1);
-	else if (cc >= 97 && cc <= 122)
+	else if (c >= 97 && c <= 122)
 		return (1);
 	else
 		return (0);

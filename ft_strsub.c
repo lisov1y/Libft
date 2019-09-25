@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 19:04:17 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/22 19:34:56 by mstupnik         ###   ########.fr       */
+/*   Created: 2019/09/20 17:37:13 by mstupnik          #+#    #+#             */
+/*   Updated: 2019/09/23 14:14:04 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
-	char	cc;
-	int		i;
+	size_t	i;
 
-	str = (char *)s;
-	cc = (char)c;
+	if (!s || !len)
+		return (NULL);
+	if (!(str = (char *)malloc((len + 1) * sizeof(char))))
+		return (NULL);
 	i = 0;
-	while (str[i] != '\0' && str[i] != cc)
+	while (s[start + i] != '\0' && i < len)
+	{
+		str[i] = s[start + i];
 		i++;
-	if (str[i] == cc)
-		return (str + i);
-	return (NULL);
+	}
+	str[i] = '\0';
+	return (str);
 }

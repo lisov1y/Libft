@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 19:04:17 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/22 19:34:56 by mstupnik         ###   ########.fr       */
+/*   Created: 2019/09/20 20:03:08 by mstupnik          #+#    #+#             */
+/*   Updated: 2019/09/24 15:21:37 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strtrim(char const *s)
 {
 	char	*str;
-	char	cc;
 	int		i;
+	int		j;
 
+	if (!s)
+		return (NULL);
 	str = (char *)s;
-	cc = (char)c;
 	i = 0;
-	while (str[i] != '\0' && str[i] != cc)
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
 		i++;
-	if (str[i] == cc)
-		return (str + i);
-	return (NULL);
+	if (str[i] == '\0')
+		return (ft_strnew(0));
+	j = ft_strlen(s) - 1;
+	while (str[j] == ' ' || str[j] == '\t' || str[j] == '\n')
+		j--;
+	return (ft_strsub(str, i, j - i + 1));
 }
