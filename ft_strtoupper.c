@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/13 12:16:16 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/26 15:06:01 by mstupnik         ###   ########.fr       */
+/*   Created: 2019/09/26 16:15:39 by mstupnik          #+#    #+#             */
+/*   Updated: 2019/09/26 16:16:28 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strtoupper(char *str)
 {
-	int i;
-	int j;
+	char	*str_up;
+	int		i;
 
+	if (!str)
+		return (NULL);
+	if (!(str_up = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1))))
+		return (NULL);
 	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i++] = src[j++];
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			str_up[i] = str[i] - 32;
+			i++;
+			continue;
+		}
+		str_up[i] = str[i];
+		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	str_up[i] = '\0';
+	return (str_up);
 }

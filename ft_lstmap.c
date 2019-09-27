@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/13 12:16:16 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/26 15:06:01 by mstupnik         ###   ########.fr       */
+/*   Created: 2019/09/26 10:12:38 by mstupnik          #+#    #+#             */
+/*   Updated: 2019/09/26 12:41:25 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strcat(char *dest, char *src)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int i;
-	int j;
+	t_list	*new_list;
 
-	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0')
+	if (lst)
 	{
-		dest[i++] = src[j++];
+		new_list = f(lst);
+		new_list->next = ft_lstmap(lst->next, f);
+		return (new_list);
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (NULL);
 }

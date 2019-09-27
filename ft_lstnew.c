@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/22 11:15:34 by mstupnik          #+#    #+#             */
-/*   Updated: 2019/09/26 15:02:31 by mstupnik         ###   ########.fr       */
+/*   Created: 2019/09/24 16:39:17 by mstupnik          #+#    #+#             */
+/*   Updated: 2019/09/25 16:23:54 by mstupnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char		*ft_itoa(int n)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char	*str;
-	int		a;
-	int		nums;
-	int		i;
+	t_list *list;
 
-	a = 0;
-	if (n < 0)
-		a = 1;
-	nums = ft_numcount(n);
-	str = ft_strnew(nums + a);
-	if (str == NULL)
+	if (!(list = (t_list *)malloc(sizeof(t_list) * content_size)))
 		return (NULL);
-	if (a)
-		str[0] = '-';
-	i = nums + a - 1;
-	while (i >= a)
+	if (!content)
 	{
-		if (a)
-			str[i--] = (n % 10 * -1) + '0';
-		else
-			str[i--] = n % 10 + '0';
-		n /= 10;
+		list->content = NULL;
+		list->content_size = 0;
 	}
-	return (str);
+	else
+	{
+		if (!(list->content = (void *)malloc(content_size)))
+			return (NULL);
+		ft_memcpy(list->content, content, content_size);
+		list->content_size = content_size;
+	}
+	list->next = NULL;
+	return (list);
 }

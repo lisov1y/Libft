@@ -6,7 +6,7 @@
 #    By: mstupnik <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/19 12:49:46 by mstupnik          #+#    #+#              #
-#    Updated: 2019/09/23 15:57:49 by mstupnik         ###   ########.fr        #
+#    Updated: 2019/09/26 18:13:56 by mstupnik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,18 @@ SRC = ft_bzero.c\
 	  ft_putchar_fd.c\
 	  ft_putstr_fd.c\
 	  ft_putendl_fd.c\
-	  ft_putnbr_fd.c
+	  ft_putnbr_fd.c\
+	  ft_lstnew.c\
+	  ft_lstdelone.c\
+	  ft_lstdel.c\
+	  ft_lstadd.c\
+	  ft_lstiter.c\
+	  ft_lstmap.c\
+	  ft_numcount.c\
+	  ft_strrev.c\
+	  ft_strtolower.c\
+	  ft_strtoupper.c\
+	  ft_caesar_cipher.c
 
 OBJ = ft_bzero.o\
 	  ft_isascii.o\
@@ -118,7 +129,18 @@ OBJ = ft_bzero.o\
 	  ft_putchar_fd.o\
 	  ft_putstr_fd.o\
 	  ft_putendl_fd.o\
-	  ft_putnbr_fd.o
+	  ft_putnbr_fd.o\
+	  ft_lstnew.o\
+	  ft_lstdelone.o\
+	  ft_lstdel.o\
+	  ft_lstadd.o\
+	  ft_lstiter.o\
+	  ft_lstmap.o\
+	  ft_numcount.o\
+	  ft_strrev.o\
+	  ft_strtolower.o\
+	  ft_strtoupper.o\
+	  ft_caesar_cipher.o\
 
 all: $(NAME)
 	
