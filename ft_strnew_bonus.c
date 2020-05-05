@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisoviy <lisoviy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mike <mike@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/15 11:13:24 by lisoviy           #+#    #+#             */
-/*   Updated: 2020/04/16 13:37:29 by lisoviy          ###   ########.fr       */
+/*   Created: 2020/05/05 12:25:04 by mike              #+#    #+#             */
+/*   Updated: 2020/05/05 12:25:55 by mike             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_calloc(size_t nmemb, size_t size)
+char	*ft_strnew(size_t size)
 {
-	void    *arr;
-	size_t	len;;
+	char *str;
 
-	arr = NULL;
-	len = nmemb * size;
-	arr = malloc(len);
-	if (arr != NULL)
-		ft_bzero(arr, len);
-	return (arr);   
+	str = (char *)ft_memalloc((size + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_bzero(str, size + 1);
+	return (str);
 }

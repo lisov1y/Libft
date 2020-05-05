@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisoviy <lisoviy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mike <mike@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 10:47:13 by mstupnik          #+#    #+#             */
-/*   Updated: 2020/04/18 15:47:08 by lisoviy          ###   ########.fr       */
+/*   Updated: 2020/05/05 12:37:50 by mike             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,16 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+
+/*
+** Own functions
+*/
+
+char	*ft_strnew(size_t size);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strstr(char *str, char *to_find);
 
 #endif

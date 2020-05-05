@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strstr_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisoviy <lisoviy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mike <mike@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/15 11:13:24 by lisoviy           #+#    #+#             */
-/*   Updated: 2020/04/16 13:37:29 by lisoviy          ###   ########.fr       */
+/*   Created: 2020/05/05 12:37:11 by mike              #+#    #+#             */
+/*   Updated: 2020/05/05 12:37:41 by mike             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_calloc(size_t nmemb, size_t size)
+char	*ft_strstr(char *str, char *to_find)
 {
-	void    *arr;
-	size_t	len;;
+	int i;
+	int j;
 
-	arr = NULL;
-	len = nmemb * size;
-	arr = malloc(len);
-	if (arr != NULL)
-		ft_bzero(arr, len);
-	return (arr);   
+	if (to_find[0] == '\0')
+		return (str);
+	i = -1;
+	while (str[++i] != '\0')
+	{
+		j = -1;
+		while (to_find[++j] == str[i + j])
+			if (to_find[j + 1] == '\0')
+				return (str + i);
+	}
+	return (0);
 }

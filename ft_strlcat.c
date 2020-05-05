@@ -18,6 +18,8 @@ size_t	strlcat(char *dest, const char *src, size_t size)
 	size_t	slen;
 	size_t	i;
 
+	dlen = ft_strlen(dest);
+	slen = ft_strlen(src);
 	if (size <= dlen)
 		slen = slen + size;
 	else

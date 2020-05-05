@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lisoviy <lisoviy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mike <mike@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 15:53:48 by lisoviy           #+#    #+#             */
-/*   Updated: 2020/04/18 15:42:39 by lisoviy          ###   ########.fr       */
+/*   Updated: 2020/05/05 12:45:28 by mike             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int      ft_numcount(int n)
 	return (count);
 }
 
-static char		*ft_strnew(size_t size)
+static char		*ft_strnew_it(size_t size)
 {
 	char *str;
 
@@ -47,7 +47,7 @@ char		*ft_itoa(int n)
 	if (n < 0)
 		a = 1;
 	nums = ft_numcount(n);
-	str = ft_strnew(nums + a);
+	str = ft_strnew_it(nums + a);
 	if (str == NULL)
 		return (NULL);
 	if (a)
